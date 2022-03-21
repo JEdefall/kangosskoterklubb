@@ -1,0 +1,231 @@
+@charset "utf-8";
+
+/*GrundStil*/
+
+html{
+    font-size: 16px;
+}
+html, body{
+    height: 100%
+}  
+
+html,body, nav, header, main, aside, footer, div {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+}
+
+body{
+    padding: 0;
+    margin: 0 auto;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: white;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: auto 100px minmax(300px, 700px) 200px auto;
+    grid-template-rows: 300px 80px auto 80px;
+    gap: 10px;
+    grid-template-areas:
+    "header    header  header  header  header  "
+    ".         .       globnav .       .       "
+    ".         locnav  main    aside   .       "
+    "footer    footer  footer  footer  footer  "
+    ;
+}
+
+
+
+/*Sidinnehåll*/
+
+header {
+    Grid-area: header;
+    background-color: black;
+    background-image: url(../images/KangosSkoterklubb.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+}
+
+/*Navigering*/
+
+#menuicon {
+    background-image: url(../images/menuicon.png);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+#globnav {
+   grid-area: globnav;
+}
+#globnav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 1px;
+    position: relative;
+}
+#globnav ul ul {
+    flex-direction: column;
+    visibility: hidden;
+    position: absolute;
+    gap: 2px;
+}
+#globnav ul li:hover ul {
+    visibility: visible;
+}
+
+#locnav {
+    grid-area: locnav;
+    background-color: bisque;
+ }
+ #locnav ul{
+     list-style: none;
+     margin: 0;
+     padding: 0;
+     display: flex;
+     flex-direction: column;
+     gap: 2px;
+     justify-content: right;
+     margin-top: 1px;
+     position: relative;
+     text-align: center;
+     width: 100px;
+ }
+ #locnav ul ul {
+     flex-direction: column;
+     visibility: hidden;
+     position: absolute;
+     gap: 2px;
+ }
+ #locnav ul li:hover ul {
+     visibility: visible;
+ }
+
+nav a {
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+   
+}
+nav a.dennaSida::before {
+    content: ">";
+}
+
+nav a.dennaSida::after {
+    content: "<";
+}
+nav a:link, nav a:visited {
+    background-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-radius: 5px;
+    color: rgb(255, 123, 0);
+    transition-property: all;  
+}
+nav a:hover, nav a:active{
+    background-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-radius: 25px;
+    color: rgb(255, 110, 58);  
+    transition-duration: 1.5s;
+}
+
+/*Huvudinnehåll*/
+
+main{
+    grid-area: main;
+    background-color: aqua;
+    padding: 10px;
+    
+}
+main h1{
+    text-align: center;
+}
+
+
+#mapTitle {
+    text-align: center;
+    font-style: italic;
+    color:rgb(247, 0, 0);
+    text-decoration: underline;
+}
+#weather{
+    display: flex;
+    justify-content: center;
+}
+
+#förmån {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.styrelsestil {
+    font-weight: bold;
+    font-style: italic;
+}
+
+dt {
+    font-weight: bold;
+    font-style: italic;
+}
+
+aside{
+    grid-area: aside;
+    background-color: bisque;
+}
+
+footer{
+    grid-area: footer;
+    background-color: rgb(148, 148, 240);
+    text-align: center;
+    font-size: larger;
+    padding: 10px;
+
+}
+
+/*Bilder*/
+
+#swish {
+    width: 200px;
+    margin-top: 80px;
+}
+
+aside #swish:hover {
+    width: 350px;
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+/*Formulär*/
+#medlemsformulär {
+    background-color: rgb(236, 174, 79);
+    padding: 10px;
+}
+
+#medlemsformulär legend {
+    font-size: larger;
+    font-weight: bold;
+}
+
+#medlemsformulär fieldset div{
+    padding: 10px;
+    font-weight: bold;
+    display:grid;
+    gap: 1.5em;
+    white-space: nowrap;
+    grid-template-columns: min-content auto;  
+}
+#medlemsformulär input {
+    width: 30ch;
+}
+
+#skickaIn {
+    text-align: left;
+    margin-top: 10px;
+}
+
