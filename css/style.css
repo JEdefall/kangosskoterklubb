@@ -49,11 +49,16 @@ header {
 /*Navigering*/
 
 #menuicon {
-    background-image: url(images/menuicon.png);
+    background-image: url(../images/menuicon.png);
     width: 24px;
     height: 24px;
-    cursor: pointer;
+    display: inline-block;
+    cursor:pointer;
+    display: none;
   }
+#menucheckbox {
+    display:none;
+}
 
 #globnav {
    grid-area: globnav;
@@ -68,6 +73,7 @@ header {
     justify-content: center;
     margin-top: 1px;
     position: relative;
+    background-color: rgb(255, 255, 255);
 }
 #globnav ul ul {
     flex-direction: column;
@@ -81,7 +87,7 @@ header {
 
 #locnav {
     grid-area: locnav;
-    background-color: bisque;
+    background-color: rgb(255, 255, 255);
  }
  #locnav ul{
      list-style: none;
@@ -145,7 +151,7 @@ nav a:hover, nav a:active{
 
 main{
     grid-area: main;
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
     padding: 10px;
     
 }
@@ -180,7 +186,7 @@ dt {
 
 aside{
     grid-area: aside;
-    background-color: bisque;
+    background-color: rgb(255, 255, 255);
 }
 
 footer{
@@ -215,7 +221,7 @@ img {
     z-index: 100;
 }
  #ruska {
-width: 150px;
+     width: 150px;
 }
 #ruska:hover {
     transform: scale(2);
@@ -276,61 +282,74 @@ width: 150px;
     justify-content: center;
     width: 100%;
     gap: 4px;   
-    transition: all;
+    transition-property: all;
+    position: relative;
 }
 #galleri1{
     opacity: .5;
+    z-index: 1;
 }
 #galleri1:hover {
     transform: scale(2);
     transition-property: all;
     transition-duration: 1s;
     opacity: 1;
+    z-index: 100;
 }
 #galleri2{
     opacity: .5;
+    z-index: 1;
 }
 #galleri2:hover {
     transform: scale(2);
     transition-property: all;
     transition-duration: 1s;
     opacity: 1;
+    z-index: 100;
 }
 #galleri3{
     opacity: .5;
+    z-index: 1;
 }
 #galleri3:hover {
     transform: scale(2);
     transition-property: all;
     transition-duration: 1s;
     opacity: 1;
+    z-index: 100;
 }
 #galleri4{
     opacity: .5;
+    z-index: 1;
 }
 #galleri4:hover {
     transform: scale(2);
     transition-property: all;
     transition-duration: 1s;
     opacity: 1;
+    z-index: 100;
 }
 #galleri5{
     opacity: .5;
+    z-index: 1;
 }
 #galleri5:hover {
     transform: scale(2);
     transition-property: all;
     transition-duration: 1s;
     opacity: 1;
+    z-index: 100;
 }
 #galleri6{
     opacity: .5;
+    z-index: 1;
 }
 #galleri6:hover {
     transform: scale(2);
     transition-property: all;
     transition-duration: 1s;
     opacity: 1;
+    z-index: 100;
 }
 
 
@@ -362,3 +381,214 @@ width: 150px;
     margin-top: 10px;
 }
 
+@media screen and (max-width: 800px){
+    /*Bilder*/
+    .galleri{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #galleri1{
+      opacity: 1;    
+    }
+    #galleri1:hover {
+        opacity: 1;
+        transform: scale(1);
+        transition-property: none;
+    }
+    #galleri2{
+        opacity: 1;  
+    }
+    #galleri2:hover {
+        opacity: 1;
+        transform: scale(1);
+        transition-property: none;
+    }
+    #galleri3{
+        opacity: 1;  
+    }
+    #galleri3:hover {
+        opacity: 1;
+        transform: scale(1);
+        transition-property: none;
+    }
+    #galleri4{
+        opacity: 1;  
+    }
+    #galleri4:hover {
+        opacity: 1;
+        transform: scale(1);
+        transition-property: none;
+    }
+    #galleri5{
+        opacity: 1;  
+    }
+    #galleri5:hover {
+        opacity: 1;
+        transform: scale(1);
+        transition-property: none;
+    }
+    #galleri6{
+        opacity: 1;  
+    }
+    #galleri6:hover {
+        opacity: 1;
+        transform: scale(1);
+        transition-property: none;
+    }
+
+    /*Formulär*/ 
+    #medlemsformulär fieldset div{
+        padding: 10px;
+        font-weight: bold;
+        display:grid;
+        gap: 1.5em;
+        white-space: nowrap;
+        grid-template-columns: auto;  
+    }
+    #medlemsformulär input {
+        width: 20ch;
+}
+
+@media screen and (max-width: 650px){
+
+    /*Huvudinnehåll*/
+    body{
+        display: grid;
+        grid-template-columns: auto 140px minmax(250px, 600px) 200px auto;
+        grid-template-rows: 200px 50px auto 100px;
+        gap: 2px;
+        grid-template-areas:
+        ".   header    header   header  .  "
+        ".   globnav  locnav  .       .  "
+        ".   .         main   aside   .  "
+        ".   .        footer  .       .  "
+        ;
+    }
+    footer{
+        background-color: white;
+    }
+    #globnav ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: right;
+        margin-top: 1px;
+        background-color: rgb(255, 255, 255);
+    }
+
+    /*Bilder*/
+    #swish {
+        display: none;
+    }
+    #ruska {
+        width: 200px;
+        }
+        #ruska:hover {
+            transform: scale(1);
+            transition-property: none;
+            }
+        
+        #sladdning {
+            width: 200px;
+        }
+        #sladdning:hover {
+            transform: scale(1);
+            transition-property: none;
+        }
+        #skidspår {
+            width: 200px;
+        }
+        #skidspår:hover{
+            transform: scale(1);
+            transition-property: none;
+        }
+        
+         #röja {
+        width: 200px;
+        }
+        #röja:hover {
+            transform: scale(1);
+            transition-property: none;
+            }
+        
+        #ledkryss {
+            width: 200px;
+        }
+        #ledkryss:hover {
+            transform: scale(1);
+            transition-property: none;
+        }
+        #vindskydd {
+            width: 200px;
+        }
+        #vindskydd:hover{
+            transform: scale(1);
+        transition-property: none;
+        } 
+}
+
+@media screen and (max-width: 550px){
+
+    /*Huvudinnehåll*/
+    body{
+        display: block;
+
+    }
+    #menuicon {
+        background-image: url(../images/menuicon.png);
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        cursor:pointer;
+    }
+    #menucheckbox ~ ul{
+        display: none;
+    }
+    #menucheckbox:checked ~ ul{
+        display: flex;
+    }
+    #globnav ul{
+        justify-content: center;
+        margin-top: 1px;
+        position: relative;
+        width: 130px;
+        z-index: 100;
+    }
+    #globnav ul ul {
+        flex-direction: column;
+        visibility: visible;
+        position: relative;
+        gap: 2px;
+        z-index: 100;
+    }
+
+    #locnav {
+        grid-area: locnav;
+        background-color: rgb(255, 255, 255);
+     }
+     #locnav ul{
+         list-style: none;
+         margin: 0;
+         padding: 0;
+         display: flex;
+         flex-direction: column;
+         gap: 2px;
+         justify-content: right;
+         position: relative;
+         width: 130px;
+         z-index: 1;
+     }
+     #locnav ul ul {
+         flex-direction: column;
+         visibility: hidden;
+         position: relative;
+         gap: 2px;
+         z-index: 1;
+     }
+
+}
+}
