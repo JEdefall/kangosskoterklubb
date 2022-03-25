@@ -354,6 +354,7 @@ width: 150px;
 
 
 /*Formulär*/
+
 #medlemsformulär {
     background-color: rgb(236, 174, 79);
     padding: 10px;
@@ -381,7 +382,10 @@ width: 150px;
     margin-top: 10px;
 }
 
+/*Media quaries*/
+
 @media screen and (max-width: 800px){
+
     /*Bilder*/
     .galleri{
         display: flex;
@@ -468,6 +472,8 @@ width: 150px;
     footer{
         background-color: white;
     }
+
+    /*Navigering*/
     #globnav ul{
         list-style: none;
         margin: 0;
@@ -538,6 +544,8 @@ width: 150px;
         display: block;
 
     }
+
+    /*Navigering*/
     #menuicon {
         background-image: url(../images/menuicon.png);
         width: 24px;
